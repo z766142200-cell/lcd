@@ -19,7 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
-
+#include "QDTFT_demo.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -230,10 +230,11 @@ void StartDefaultTask(void *argument)
   for(;;)
   {
     osDelay(1);
-	  HAL_Delay(300);
+//	  HAL_Delay(300);
     HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
-  }
+    QDTFT_Test_Demo();
   /* USER CODE END 5 */
+}
 }
 
 /**
@@ -288,3 +289,5 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
+
+

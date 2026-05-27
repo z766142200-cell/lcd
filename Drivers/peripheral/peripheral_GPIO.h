@@ -1,5 +1,5 @@
-#ifndef __DRIVERS_GPIO_H__
-#define __DRIVERS_GPIO_H__
+#ifndef __PERIPHERAL_GPIO_H__
+#define __PERIPHERAL_GPIO_H__
 
 #include "stm32f1xx_hal.h"
 

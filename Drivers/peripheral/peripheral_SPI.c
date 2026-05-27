@@ -1,4 +1,5 @@
-#include "Drivers_SPI.h"
+#include "peripheral_SPI.h"
+#include "main.h"
 
 
 SPI_HandleTypeDef hspi1;
@@ -22,6 +23,8 @@ void MX_SPI1_Init(void)
   {
     Error_Handler();
   }
+	
+	
 
 
 }

@@ -12,6 +12,11 @@
 //              CS    接PA4 
 //							BL		接PB10
 *******************************************************************************/
+#include "stdint.h"
+#include "stm32f1xx_hal.h"
+#include "stm32f1xx.h"
+#include "stm32f1xx_hal_gpio.h"
+
 
 #define RED  	0xf800
 #define GREEN	0x07e0
@@ -31,13 +36,13 @@
 
 
 
-#define LCD_SCL        	GPIO_Pin_5	//PB13--->>TFT --SCL/SCK
-#define LCD_SDA        	GPIO_Pin_7	//PB15 MOSI--->>TFT --SDA/DIN
-#define LCD_CS        	GPIO_Pin_4  //MCU_PB11--->>TFT --CS/CE
+#define LCD_SCL        	GPIO_PIN_5	//PB13--->>TFT --SCL/SCK
+#define LCD_SDA        	GPIO_PIN_7	//PB15 MOSI--->>TFT --SDA/DIN
+#define LCD_CS        	GPIO_PIN_4  //MCU_PB11--->>TFT --CS/CE
 
-#define LCD_LED        	GPIO_Pin_10  //MCU_PB9--->>TFT --BL
-#define LCD_RS         	GPIO_Pin_1	//PB11--->>TFT --RS/DC
-#define LCD_RST     	GPIO_Pin_0	//PB10--->>TFT --RST
+#define LCD_LED        	GPIO_PIN_10  //MCU_PB9--->>TFT --BL
+#define LCD_RS         	GPIO_PIN_1	//PB11--->>TFT --RS/DC
+#define LCD_RST     	GPIO_PIN_0	//PB10--->>TFT --RST
 
 //#define LCD_CS_SET(x) LCD_CTRL->ODR=(LCD_CTRL->ODR&~LCD_CS)|(x ? LCD_CS:0)
 
@@ -74,16 +79,16 @@ LCD_CS_SET;\
 
 
 void LCD_GPIO_Init(void);
-void Lcd_WriteIndex(u8 Index);
-void Lcd_WriteData(u8 Data);
-void Lcd_WriteReg(u8 Index,u8 Data);
-u16 Lcd_ReadReg(u8 LCD_Reg);
+void Lcd_WriteIndex(uint8_t Index);
+void Lcd_WriteData(uint8_t Data);
+void Lcd_WriteReg(uint8_t Index,uint8_t Data);
+uint16_t Lcd_ReadReg(uint8_t LCD_Reg);
 void Lcd_Reset(void);
 void Lcd_Init(void);
-void Lcd_Clear(u16 Color);
-void Lcd_SetXY(u16 x,u16 y);
-void Gui_DrawPoint(u16 x,u16 y,u16 Data);
-unsigned int Lcd_ReadPoint(u16 x,u16 y);
-void Lcd_SetRegion(u16 x_start,u16 y_start,u16 x_end,u16 y_end);
-void LCD_WriteData_16Bit(u16 Data);
+void Lcd_Clear(uint16_t Color);
+void Lcd_SetXY(uint16_t x,uint16_t y);
+void Gui_DrawPoint(uint16_t x,uint16_t y,uint16_t Data);
+unsigned int Lcd_ReadPoint(uint16_t x,uint16_t y);
+void Lcd_SetRegion(uint16_t x_start,uint16_t y_start,uint16_t x_end,uint16_t y_end);
+void LCD_WriteData_16Bit(uint16_t Data);
 

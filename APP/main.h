@@ -31,9 +31,10 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "Drivers_USART.h"
-#include "Drivers_GPIO.h"
-#include "Drivers_SPI.h"
+#include "peripheral_USART.h"
+#include "peripheral_GPIO.h"
+#include "peripheral_SPI.h"
+
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
