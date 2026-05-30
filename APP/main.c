@@ -230,7 +230,7 @@ void StartDefaultTask(void *argument)
   for(;;)
   {
     osDelay(1);
-//	  HAL_Delay(300);
+  HAL_Delay(300);
     HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
     QDTFT_Test_Demo();
   /* USER CODE END 5 */

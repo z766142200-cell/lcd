@@ -19,41 +19,42 @@
 
 
 
-//液晶IO初始化配置
-// void LCD_GPIO_Init(void)
-// {
+// 液晶IO初始化配置
+//void LCD_GPIO_Init(void)
+//{
 
-// 	GPIO_InitTypeDef  GPIO_InitStructure;
-	      
-// 	RCC_APB2PeriphClockCmd( RCC_APB2Periph_GPIOB ,ENABLE);
-	
-// 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0| GPIO_Pin_10| GPIO_Pin_1;
-// 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-// 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
-// 	GPIO_Init(GPIOB, &GPIO_InitStructure);
-      
-	
-// 	RCC_APB2PeriphClockCmd( RCC_APB2Periph_GPIOA ,ENABLE);
-	
-// 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4| GPIO_Pin_5| GPIO_Pin_7;
-// 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-// 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
-// 	GPIO_Init(GPIOA, &GPIO_InitStructure);
-// }
+//	GPIO_InitTypeDef  GPIO_InitStructure;
+//	      
+//	__HAL_RCC_GPIOB_CLK_ENABLE();
+//	
+//	GPIO_InitStructure.Pin= GPIO_PIN_0| GPIO_PIN_10| GPIO_PIN_1;
+//	GPIO_InitStructure.Speed= GPIO_SPEED_FREQ_LOW;
+//	GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
+//	HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);
+//      
+//	
+//	__HAL_RCC_GPIOA_CLK_ENABLE();
+//	
+//	GPIO_InitStructure.Pin= GPIO_PIN_4| GPIO_PIN_5| GPIO_PIN_7;
+//	GPIO_InitStructure.Speed= GPIO_SPEED_FREQ_LOW;
+//	GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
+//	HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);
+//}
 //向SPI总线传输一个8位数据
 void  SPI_WriteData(uint8_t Data)
 {
-	// unsigned char i=0;
-	// for(i=8;i>0;i--)
-	// {
-	// 	if(Data&0x80)	
-	//   LCD_SDA_SET; //输出数据
-  //     else LCD_SDA_CLR;
-	   
-  //     LCD_SCL_CLR;       
-  //     LCD_SCL_SET;
-  //     Data<<=1; 
-	// }
+//	unsigned char i=0;
+//	for(i=8;i>0;i--)
+//	{
+//				 LCD_SCL_CLR; 
+//		if(Data&0x80)	
+//	  LCD_SDA_SET; //输出数据
+//      else LCD_SDA_CLR;
+//	   
+//           
+//      LCD_SCL_SET;
+//      Data<<=1; 
+//	}
 	HAL_SPI_Transmit(&hspi1, &Data, 1, 0xFFFF);
 }/*  */
 
@@ -100,9 +101,9 @@ void Lcd_Reset(void)
 }
 
 //LCD Init For 1.44Inch LCD Panel with ST7735R.
-void Lcd_Init(void)
+ void Lcd_Init(void)
 {	
-	// LCD_GPIO_Init();
+//	LCD_GPIO_Init();
 	Lcd_Reset(); //Reset before LCD Init.
 
 	//LCD Init For 1.44Inch LCD Panel with ST7735R.
