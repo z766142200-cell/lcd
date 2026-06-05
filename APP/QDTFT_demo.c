@@ -42,17 +42,17 @@ void Num_Test(void)
 
 void Font_Test(void)
 {
-	Lcd_Clear(GRAY0);
+//	Lcd_Clear(GRAY0);
 	Gui_DrawFont_GBK16(16,10,BLUE,GRAY0,"文字显示测试");
 
-	HAL_Delay(500);
-	Lcd_Clear(GRAY0);
+	// HAL_Delay(500);
+	//Lcd_Clear(GRAY0);
 	Gui_DrawFont_GBK16(16,30,YELLOW,GRAY0,"电子技术");
 	Gui_DrawFont_GBK16(16,50,BLUE,GRAY0,"专注液晶批发");
 	Gui_DrawFont_GBK16(16,70,RED,GRAY0, "全程技术支持");
 	Gui_DrawFont_GBK16(0,100,BLUE,GRAY0,"Tel:11111111111");
 	Gui_DrawFont_GBK16(0,130,RED,GRAY0, "QQ:11111111");	
-	HAL_Delay(500);	
+	 HAL_Delay(500);	
 }
 
 void Color_Test(void)
@@ -84,7 +84,7 @@ void showimage(const unsigned char *p) //显示40*40 QQ图片
 	{
 	   	for(j=0;j<3;j++)
 		{	
-			Lcd_SetRegion(40*j+2,40*k,40*j+39,40*k+39);		//坐标设置
+			Lcd_SetRegion(40*j,40*k,40*j+39,40*k+39);		//坐标设置
 		    for(i=0;i<40*40;i++)
 			 {	
 			 	picL=*(p+i*2);	//数据低位在前
@@ -100,18 +100,18 @@ void Lcd_ShowCenter_92x100(const unsigned char *p)
 {
     int i;
     unsigned char picH,picL;
-    Lcd_Clear(WHITE);
+    // Lcd_Clear(WHITE);
 
     // 128宽 160高屏幕，92*100居中坐标
-    uint16_t x0 = (128 - 92)/2;
-    uint16_t y0 = (160 - 100)/2;
-    uint16_t x1 = x0 + 92 - 1;
-    uint16_t y1 = y0 + 100 - 1;
+    uint16_t x0 = (128 - 118)/2;
+    uint16_t y0 = (160 - 127)/2;
+    uint16_t x1 = x0 + 118 - 1;
+    uint16_t y1 = y0 + 127- 1;
 
-    Lcd_SetRegion(x0+2, y0, x1, y1);
+    Lcd_SetRegion(x0, y0, x1, y1);
 
     // 92*100总像素
-    for(i=0; i<92*100; i++)
+    for(i=0; i<118*127; i++)
     {
         picL = *p++;
         picH = *p++;
@@ -119,7 +119,7 @@ void Lcd_ShowCenter_92x100(const unsigned char *p)
     }
     HAL_Delay(1500);
 }
-extern const unsigned char gImage_picture_xiaoqiao[18400] ;
+extern const unsigned char gImage_picture_xiaoqiao[29972] ;
 void QDTFT_Test_Demo(void)
 {
 	Lcd_Init();
@@ -127,10 +127,11 @@ void QDTFT_Test_Demo(void)
 //  Redraw_Mainmenu();//绘制主菜单(部分内容由于分辨率超出物理值可能无法显示)
 //	Color_Test();//简单纯色填充测试
 //	Num_Test();//数码管字体测试
-//	 Font_Test();//中英文显示测试		
+	Lcd_Clear(WHITE);
 //	 showimage(gImage_qq);//图片显示示例
 	 Lcd_ShowCenter_92x100(gImage_picture_xiaoqiao);//图片显示示例
+	  Font_Test();//中英文显示测试	
 //	 HAL_Delay(300);
-	LCD_LED_CLR;//IO控制背光灭	
+//	LCD_LED_CLR;//IO控制背光灭	
 	
 }

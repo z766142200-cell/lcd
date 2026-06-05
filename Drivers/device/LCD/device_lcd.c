@@ -231,13 +231,13 @@ void Lcd_SetRegion(uint16_t x_start,uint16_t y_start,uint16_t x_end,uint16_t y_e
 	Lcd_WriteData(0x00);
 	Lcd_WriteData(x_start);//Lcd_WriteData(x_start+2);
 	Lcd_WriteData(0x00);
-	Lcd_WriteData(x_end+2);
+	Lcd_WriteData(x_end);
 
 	Lcd_WriteIndex(0x2b);
 	Lcd_WriteData(0x00);
 	Lcd_WriteData(y_start+0);
 	Lcd_WriteData(0x00);
-	Lcd_WriteData(y_end+1);
+	Lcd_WriteData(y_end);
 	
 	Lcd_WriteIndex(0x2c);
 
