@@ -64,7 +64,7 @@ void Lcd_WriteIndex(uint8_t Index)
    //SPI 写命令时序开始
    LCD_CS_CLR;
    LCD_RS_CLR;
-	 SPI_WriteData(Index);
+	SPI_WriteData(Index);
    LCD_CS_SET;
 }
 
