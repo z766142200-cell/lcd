@@ -14,7 +14,7 @@
     "**/*.bin": true,
     "**/*.lst": true,
     "**/*.map": true,
-    "**/OBJ": true,
+    "**/OBJ": true
   },
   "search.exclude": {
     "**/Debug/**": true,
@@ -24,8 +24,7 @@
     "**/*.map": true,
     "**/*.bin": true,
     "**/*.lst": true,
-    "**/OBJ/**": true,
-    
+    "**/OBJ/**": true
   },
   "files.watcherExclude": {
     "**/Debug/**": true,
@@ -35,8 +34,7 @@
     "**/.git/subtree-cache/**": true,
     "**/OBJ/**": true,
     "**/Build/**": true,
-    "**/build/**": true,
-
+    "**/build/**": true
   },
   "cloudcode.beta.forceOobLogin": true,
   "C_Cpp_Runner.cCompilerPath": "gcc",

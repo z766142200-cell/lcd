@@ -42,7 +42,7 @@
 
 #define LCD_LED        	GPIO_PIN_10  
 #define LCD_RS         	GPIO_PIN_1	
-#define LCD_RST     	GPIO_PIN_0	
+#define LCD_RST     	   GPIO_PIN_0	
 
 //#define LCD_CS_SET(x) LCD_CTRL->ODR=(LCD_CTRL->ODR&~LCD_CS)|(x ? LCD_CS:0)
 

@@ -1,5 +1,5 @@
 #include "ov7725_GPIO_Function_Init.h"
-#include "stdint.h"
+
 void VSYNC_EXIT_Init()
 {
 //	GPIO_InitTypeDef GPIO_InitStructure;
